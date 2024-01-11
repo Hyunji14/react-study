@@ -4,8 +4,9 @@ function App() {
   return (
     <Wrapper>
       <Box>
-        <span>😆</span>
+        <Emoji>😆</Emoji>
       </Box>
+      <Emoji>🔥</Emoji>
     </Wrapper>
   );
 }
@@ -28,6 +29,10 @@ const rotateAnimation = keyframes`
 }
 `;
 
+const Emoji = styled.span`
+  font-size: 36px;
+`;
+
 const Box = styled.div`
   height: 200px;
   width: 200px;
@@ -37,10 +42,10 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
 
-  span {
-    font-size: 36px;
+  // 이렇게 하면 Emoji component가 p 이든, span 이든 상관없음
+  ${Emoji} {
     &:hover {
-      font-size: 50px;
+      font-size: 98px;
     }
   }
 `;
