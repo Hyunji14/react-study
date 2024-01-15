@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 
 interface ContainerProps {
@@ -17,15 +18,17 @@ const Container = styled.div<ContainerProps>`
 interface CircleProps {
   bgColor: string;
   borderColor?: string;
-  text?: string;
 }
 
-function Circle({ bgColor, borderColor, text = 'default text' }: CircleProps) {
+function Circle({ bgColor, borderColor }: CircleProps) {
+  const [counter, setCounter] = useState(1);
+
   // ?? 의미 : borderColor 가 undefine 라면 white로 넘기겠다는 것
   return (
-    <Container bgColor={bgColor} borderColor={borderColor ?? 'white'}>
-      {text}
-    </Container>
+    <Container
+      bgColor={bgColor}
+      borderColor={borderColor ?? 'white'}
+    ></Container>
   );
 }
 
