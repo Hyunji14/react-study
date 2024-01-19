@@ -1,10 +1,12 @@
-import { Route, Routes, createBrowserRouter } from 'react-router-dom';
-import Header from './components/Header';
+import { createBrowserRouter } from 'react-router-dom';
 import Home from './screens/Home';
 import About from './screens/About';
 import Root from './Root';
 import NotFound from './screens/NotFound';
 import ErrorComponent from './components/ErrorComponent';
+
+// error component가 없을 경우 런타임 충돌이 일어나서 앱이 죽어버림
+// 그러니까 error component가 있는게 좋음!
 
 const router = createBrowserRouter([
   {
