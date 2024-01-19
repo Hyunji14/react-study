@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
-import Router from './Router';
 import Header from './components/Header';
 
+// Outlet은 자식의 모든 화면들을 rendering 함
 function Root() {
   return (
     <div>
